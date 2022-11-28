@@ -5,8 +5,8 @@ var dayEnd = 17;
 var businessHours = [7,8,9,10,11,12,13,14,15,16,17];
 
 // put current time variable up here so i can test the code easily.
-// var currentTime = parseInt(moment().format('HH'));
-var currentTime = 3;
+var currentTime = parseInt(moment().format('HH'));
+// var currentTime = 3;
 
 var dateTimeCounter = setInterval(function(){
     currentDayEl.text(moment().format('MMMM Do YYYY, h:mm:ss a'))
@@ -93,7 +93,14 @@ plan.forEach(element => {
     }
 })}
 
+// plan.forEach(element => {
+//     $(`${element.time}TimeGroupContainer`).on('click',(function(){
+//         console.log("i was clicked");
+//     }));
+// })
 
+
+// save button click event listner logic
 var modifyTimeWindow = document.querySelectorAll('.btn');
 modifyTimeWindow.forEach(element => {
     element.addEventListener('click', function() {
