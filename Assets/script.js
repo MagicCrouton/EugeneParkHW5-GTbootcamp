@@ -31,23 +31,33 @@ businessHours.forEach(element => {
     }
     else if (element === currentTime) {
     calendarEl.append(`<ul class="list-group list-group-horizontal">
-                    <li id = "${time}timeGroup" class="list-group-item list-group-item-warning timeGroup col-2 col-md-2 col-lg-1">${time}</li>
-                    <li class="list-group-item list-group-item-warning timeGroup col-8 col-md-8 col-lg-10"></li>
+                    <li class="list-group-item list-group-item-warning timeGroup col-2 col-md-2 col-lg-1">${time}</li>
+                    <li id = "${time}TimeGroupList" class="list-group-item list-group-item-warning timeGroup col-8 col-md-8 col-lg-10">
+                        <input class="form-control form-control-lg" type="text" placeholder="Input Task here" aria-label=".form-control-lg example">
+                    </li>
                     <li class="list-group-item list-group-item-warning col-2 col-md-2 col-lg-1">
-                    <button type="button" class="btn btn-primary"><img src="./Assets/schedule.png" alt="save button"></button>
+                        <button id = "${time}timeGroup" type="button" class="btn btn-primary"><img src="./Assets/schedule.png" alt="save button">Save</button>
                     </li>
                     </ul>`);
                     //got the button from https://www.flaticon.com/free-icon/schedule_3774487?related_id=3774487&origin=search#
     }
     else {
     calendarEl.append(`<ul class="list-group list-group-horizontal">
-                    <li id = "${time}timeGroup" class="list-group-item list-group-item-primary timeGroup col-2 col-md-2 col-lg-1">${time}</li>
-                    <li class="list-group-item list-group-item-primary timeGroup col-8 col-md-8 col-lg-10"></li>
+                    <li class="list-group-item list-group-item-primary timeGroup col-2 col-md-2 col-lg-1">${time}</li>
+                    <li id = "${time}TimeGroupList" class="list-group-item list-group-item-primary timeGroup col-8 col-md-8 col-lg-10">
+                        <input class="form-control form-control-lg" type="text" placeholder="Input Task here" aria-label=".form-control-lg example">
+                    </li>
                     <li class="list-group-item list-group-item-primary col-2 col-md-2 col-lg-1">
-                    <button type="button" class="btn btn-primary"><img src="./Assets/schedule.png" alt="save button"></button>
+                        <button id = "${time}timeGroup" type="button" class="btn btn-primary"><img src="./Assets/schedule.png" alt="save button">Save</button>
                     </li>
                     </ul>`);
     }
 
 });
 
+var modifyTimeWindow = document.querySelectorAll('.btn');
+
+modifyTimeWindow.forEach(element => {
+    element.addEventListener('click', function() {
+        console.log(`${element.id} was clicked`);
+})})
