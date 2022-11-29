@@ -2,7 +2,11 @@ var calendarEl = $('#container');
 var currentDayEl = $('#currentDay');
 var dayStart = 7;
 var dayEnd = 17;
-var businessHours = [7,8,9,10,11,12,13,14,15,16,17];
+var businessHours = [];
+
+for ( i=dayStart; i<dayEnd+1; ++i) {
+    businessHours[(i-dayStart)] = i
+}
 
 // put current time variable up here so i can test the code easily.
 var currentTime = parseInt(moment().format('HH'));
